@@ -1,7 +1,7 @@
 import React from "react";
 import { MacbookScroll } from "./acernityComponents/computerAnimation";
 import { MdComputer } from "react-icons/md";
-import imageDash from "../../public/assets/fakeDashboard.png";
+import imageDash from "../../public/assets/hackingImage.png";
 export function MacbookScrollDemo() {
   return (
     <div className="overflow-hidden ">
