@@ -22,7 +22,6 @@ import { IconWorld } from "@tabler/icons-react";
 import { IconCommand } from "@tabler/icons-react";
 import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
-import imageDash from "../../../public/assets/bagariLogo.svg";
 
 export const MacbookScroll = ({
   src,
@@ -129,7 +128,7 @@ export const Lid = ({
   scaleY: MotionValue<number>;
   rotate: MotionValue<number>;
   translate: MotionValue<number>;
-  src?: string;
+  src?: string | any;
 }) => {
   return (
     <div className="relative [perspective:800px]">
@@ -165,9 +164,8 @@ export const Lid = ({
       >
         <div className="absolute inset-0 bg-[#272729] rounded-lg" />
         <img
-          src={"../../../public/assets/fakeDashboard.png"}
-          alt="aceternity qwdqwd"
-          loading="lazy"
+          src={src as string}
+          alt="cool coding image"
           className="object-cover object-left-top absolute rounded-lg inset-0 h-full w-full"
         />
       </motion.div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { MacbookScroll } from "./acernityComponents/computerAnimation";
 import { MdComputer } from "react-icons/md";
-
+import imageDash from "../../public/assets/fakeDashboard.png";
 export function MacbookScrollDemo() {
   return (
     <div className="overflow-hidden ">
@@ -17,7 +17,7 @@ export function MacbookScrollDemo() {
             <Badge className="h-10 w-10 transform -rotate-12" />
           </a>
         }
-        src={`/linear.webp`}
+        src={imageDash.src}
         showGradient={false}
       />
     </div>
