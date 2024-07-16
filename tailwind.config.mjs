@@ -8,6 +8,15 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      utilities: {
+        ".no-scrollbar": {
+          "::-webkit-scrollbar": {
+            display: "none",
+          },
+          "-ms-overflow-style": "none" /* Internet Explorer 10+ */,
+          "scrollbar-width": "none" /* Firefox */,
+        },
+      },
       animation: {
         "meteor-effect": "meteor 5s linear infinite",
       },

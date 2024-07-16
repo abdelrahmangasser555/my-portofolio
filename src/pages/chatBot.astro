@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ChatBodyComponent from "../ReactComponents/chatComponents/chatBotBody";
+const apiKey = import.meta.env.OPENAI_API_KEY;
+---
+
+<BaseLayout showFotter={false}>
+  <div class="flex justify-center flex-col align-middle">
+    <ChatBodyComponent apiKey={apiKey} client:load />
+  </div>
+</BaseLayout>
