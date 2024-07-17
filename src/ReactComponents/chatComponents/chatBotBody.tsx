@@ -3,6 +3,8 @@ import { myInfo } from "../myInfo";
 import { ChatOpenAI } from "@langchain/openai";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { StringOutputParser } from "@langchain/core/output_parsers";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function ChatBodyComponent({ apiKey }) {
   //sk-proj-7SovQyCSUv93dfn8SnRzT3BlbkFJVbr5w0HcixqZKlJ3gyrf
@@ -46,7 +48,14 @@ export default function ChatBodyComponent({ apiKey }) {
 
     you will have the last messgaes and your answers between you and the person you are talking to 
     make it like a conversation like you are introducing you self don't tell him how can I help you like you are a robot tell him things like what whould you like to know about me 
-    
+
+    always offer help and introduce yourself (you are ${myInfo.name}), first in the conversation.
+    try to understand what the user wants and begin the conversation by offering help and representing the skills ${myInfo.name} has
+    try to open new conversations to keep the conversation going on by asking more follow up questions after each round in the conversation
+
+    never say hey there at all in a conversation 
+
+    answer in markdown and make your points clear
 
     `;
   const prompt = ChatPromptTemplate.fromMessages([
@@ -115,7 +124,9 @@ export default function ChatBodyComponent({ apiKey }) {
             </li>
             {botMessages[index] ? (
               <li className="self-start bg-gray-300 text-black p-2 rounded-lg max-w-[80%] mb-[15px]">
-                {botMessages[index]}
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {botMessages[index]}
+                </ReactMarkdown>
               </li>
             ) : (
               <p>loading..</p>
@@ -123,6 +134,16 @@ export default function ChatBodyComponent({ apiKey }) {
           </div>
         ))}
       </ul>
+      {userMessages.length === 0 ? (
+        <div className="relative ">
+          {/* <Lottie onAnimationStart={() => {}} animationData={chatMobile} /> */}
+
+          <p className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2 w-[95vw] lg:w-[70vw] p-2   rounded-lg text-center">
+            Hello there I am {myInfo.name} ask me whatever you want to know
+            about me.
+          </p>
+        </div>
+      ) : null}
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[95vw] lg:w-[70vw] p-2   rounded-lg flex items-center space-x-2">
         <input
           className="flex-1 p-2 border border-gray-300 rounded-lg text-[black]"
