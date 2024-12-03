@@ -7,7 +7,6 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 export default function ChatBodyComponent({ apiKey }) {
-  //sk-proj-7SovQyCSUv93dfn8SnRzT3BlbkFJVbr5w0HcixqZKlJ3gyrf
   const bottomRef = useRef(null);
   const [userMessages, setuserMessages] = React.useState([]);
   const [botMessages, setBotMessages] = React.useState([]);
