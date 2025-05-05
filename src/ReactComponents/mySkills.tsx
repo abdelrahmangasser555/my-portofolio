@@ -45,7 +45,7 @@ export default function MySkills({
                   staggerChildren: 0.2,
                 }}
                 custom={index}
-                className="m-2 sm:w-[30vw] sm:px-3 lg:w-[15%] text-[black]  bg-slate-50 hover:shadow-sm hover:shadow-slate-400 rounded-lg p-2 text-center min-w-[fit-content] text-nowrap  "
+                className="m-2 sm:w-[30vw] sm:px-3 lg:w-[15%] text-[black] dark:text-white bg-slate-50 dark:bg-slate-800 hover:shadow-sm hover:shadow-slate-400 dark:hover:shadow-slate-700 rounded-lg p-2 text-center min-w-[fit-content] text-nowrap"
               >
                 {skill}
               </motion.li>
@@ -55,7 +55,7 @@ export default function MySkills({
           {viewMoreText && (
             <motion.a
               href="/about#skills"
-              className="text-center ml-5 flex justify-center items-center"
+              className="text-center ml-5 flex justify-center items-center dark:text-white"
               variants={containerSkills}
               initial="hidden"
               whileInView="vissible"
